@@ -1,0 +1,169 @@
+version: '2'
+
+services:
+  eureka-server:
+    build: eureka-server/
+    #    restart: always
+    network_mode: "host"
+    hostname: localhost
+    image: eureka-server
+    ports:
+      - 8761:8761
+
+  config-service:
+    build: config-server/
+    #    restart: always
+    network_mode: "host"
+    image: config-service
+    hostname: localhost
+    ports:
+      - 8888:8888
+
+  zuul-api:
+    build: zuul-api/
+    depends_on:
+      - config-service
+      - eureka-server
+    #    restart: always
+    network_mode: "host"
+    image: zuul-api
+    hostname: localhost
+    ports:
+      - 8082:8082
+
+  squadninja-frontend:
+    container_name: squadninja-frontend-container
+    build: ./squadninja-frontend
+    ports:
+      - 4200:4200
+    network_mode: "host"
+    hostname: localhost
+
+  user-login-service:
+    build: user-login-service/
+    restart: always
+    network_mode: "host"
+    image: user-login-service
+    hostname: localhost
+    ports:
+      - 8085:8085
+
+  neo4j:
+    image: neo4j:3.0
+    ports:
+      - 7474:7474
+      - 7687:7687
+    expose:
+      - 7474
+    container_name: neo4j_docker
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/import:/import
+    environment:
+      - NEO4J_AUTH=neo4j/1234
+
+  email-service:
+    build: email-service/
+    depends_on:
+      - eureka-server
+      - config-service
+      - zuul-api
+    restart: always
+    network_mode: "host"
+    image: email-service
+    environment:
+      WAIT_HOSTS: localhost:8761 ,localhost:8888, localhost:8082
+      WAIT_BEFORE_HOSTS: 20
+    ports:
+      - 8052:8052
+    hostname: localhost
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: always
+    volumes:
+      - $HOME/rabbitmqdata:/var/lib/rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    hostname: localhost
+    network_mode: "host"
+
+  mongo:
+    image: mongo
+    container_name: mongo-container
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 27017:27017
+    volumes:
+      - $HOME/mongo:/data/db
+
+  mysql:
+    image: mysql
+    ports:
+      - 3306:3306
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: userdetailsdb
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - $HOME/data/datasql:/var/lib/mysql
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+
+  
+  idea-hamster-profile-service:
+    build: idea-hamster-profile-service
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    depends_on:
+      - mongo
+      - config-service
+      - eureka-server
+      - rabbitmq
+    ports:
+      - 8080:8080
+
+  service-provider-profile-service:
+    build: service-provider-profile-service
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    depends_on:
+      - mongo
+      - config-service
+      - eureka-server
+      - rabbitmq
+    ports:
+      - 8084:8084
+
+  idea-service:
+     build: idea-service
+     network_mode: "host"
+     hostname: localhost
+     restart: always
+     depends_on:
+       - mongo
+       - config-service
+       - eureka-server
+       - rabbitmq
+     ports:
+       - 8090:8090
+    
+
+#WAIT_HOSTS: comma separated list of pairs host:port for which you want to wait.
+#WAIT_HOSTS_TIMEOUT: max number of seconds to wait for the hosts to be available before failure. The default is 30 seconds.
+#WAIT_BEFORE_HOSTS: number of seconds to wait (sleep) before start checking for the hosts availability
+#WAIT_AFTER_HOSTS: number of seconds to wait (sleep) once all the hosts are available
+#WAIT_SLEEP_INTERVAL: number of seconds to sleep between retries. The default is 1 second.

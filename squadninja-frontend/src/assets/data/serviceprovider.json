@@ -1,0 +1,36 @@
+{
+    "ServiceProviderData" :[
+        {
+            "name": "suresh",
+            "mobilenumber":123456789,
+            "Emailid":"suresh@gmail.com",
+            "domian":"Devloper",
+            "skills":["java","python"],
+            "cost":30
+        },
+        {
+            "name": "manish",
+            "mobilenumber":123456789,
+            "Emailid":"suresh@gmail.com",
+            "domian":"Tester",
+            "skills":[".net","python"],
+            "cost":30
+        },
+        {
+            "name": "adithya",
+            "mobilenumber":123456789,
+            "Emailid":"suresh@gmail.com",
+            "domian":"Legaladvisor",
+            "skills":["java",".net"],
+            "cost":30
+        },
+        {
+            "name": "sruthi",
+            "mobilenumber":123456789,
+            "Emailid":"suresh@gmail.com",
+            "domian":"Devloper",
+            "skills":["java","python",".net"],
+            "cost":30
+        }
+    ]
+}

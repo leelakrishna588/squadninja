@@ -1,0 +1,15 @@
+nodeId,name,parentId,nodeType,nodeClass,parentRelation
+101,blockchain,1,subDomain,subDomain,has
+102,bigdata,1,subDomain,subDomain,has
+103,cloudcomputing,1,subDomain,subDomain,has
+104,android,1,subDomain,subDomain,has
+105,network,1,subDomain,subDomain,has
+106,IoT,1,subDomain,subDomain,has
+107,web,1,subDomain,subDomain,has
+108,cybersecurity,1,subDomain,subDomain,has
+109,database,1,subDomain,subDomain,has
+201,birthday,2,subDomain,subDomain,has
+201,wedding,2,subDomain,subDomain,has
+202,conferencemanagement,2,subDomain,subDomain,has
+203,productlaunch,2,subDomain,subDomain,has
+204,gettogether,2,subDomain,subDomain,has

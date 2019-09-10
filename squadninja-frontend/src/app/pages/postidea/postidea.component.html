@@ -1,0 +1,181 @@
+
+  <div class="heading">
+    <h1>Idea Details</h1>
+  </div>
+  <!-- project title starts -->
+
+  <div class="title">
+    <h6>Project Title :</h6>
+    <mat-form-field class="projecttitle">
+      <input matInput placeholder="Project Title" [(ngModel)]="title" name="title">
+      <mat-hint align="start"><strong>You have to enter the Title</strong> </mat-hint>
+    </mat-form-field>
+  </div>
+  <!-- project title ends -->
+  ​
+  <!-- project description starts -->
+  <div class="description">
+    <h6>Project Description :</h6>
+    <mat-form-field class="projectdescription">
+      <textarea matInput placeholder="Project Description" [(ngModel)]="description" name="description"></textarea>
+    </mat-form-field>
+  </div>
+  <!-- project description ends -->
+  ​
+  <!-- project duration starts -->
+  <div class="duration">
+    <h6>Duration :</h6>
+    <mat-form-field class="projectduration">
+      <input matInput placeholder="Duration" type="text" [(ngModel)]="duration" name="duration">
+      <mat-hint align="start"><strong>You have to enter the Duration in the form of Year, Month, Days </strong>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+  <!-- project duration ends -->
+
+  <!-- domain starts -->
+  <div class="domain">
+    <h6>Domain :</h6>
+    <mat-form-field class="projectdomain">
+      <mat-label>Domain</mat-label>
+      <mat-select name="domain" [(ngModel)]="domain">
+        <mat-option *ngFor="let domain of domains" [value]="domain.name">
+          {{domain.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <!-- domain ends -->
+  ​
+  <!-- subdomain starts -->
+  <div class="subdomains">
+    <h6>SubDomain :</h6>
+    <mat-form-field class="projectsubdomains">
+      <input type="text" placeholder="SubDomain" aria-label="subDomain" matInput [formControl]="myControls"
+        [matAutocomplete]="auto1" [(ngModel)]="subdomain" name="subdomain">
+      <mat-autocomplete #auto1="matAutocomplete">
+        <mat-option *ngFor="let subdomain of filteredOptions1 | async" [value]="subdomain">
+          {{subdomain}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <!-- subdomain ends-->
+
+
+  <!-- role starts -->
+  <div class="role">
+    <table class="roletable">
+      <thead class="threadclass">
+        <tr>
+          <th>Role :</th>
+          <th>Skills :</th>
+          <th>No Of People :</th>
+          <th>Experience :</th>
+        </tr>
+      </thead>
+      <tbody class="rolebody">
+        <tr *ngFor="let field of fieldArray; let i = index">
+          <td>
+            <input [(ngModel)]="field.role" class="form-control" type="text" name={{field.role}} />
+          </td>
+
+          <td>
+            <input [(ngModel)]="field.skills" class="form-control" type="text" name={{field.skills}} />
+          </td>
+
+          <td>
+            <input [(ngModel)]="field.noofpeople" class="form-control" type="number" name={{field.noofpeople}} />
+          </td>
+
+          <td>
+            <input [(ngModel)]="field.experience" class="form-control" type="text" name={{field.experience}} />
+          </td>
+
+          <td>
+            <button class="btn btn-default" type="button" (click)="deleteFieldValue(i)">Delete</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field class="projectrole">
+              <input type="text" placeholder="Role" aria-label="role" matInput [formControl]="myControlrole"
+                [matAutocomplete]="auto" [(ngModel)]="newAttribute.role" name="roleName">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let role of filteredRoles | async" [value]="role">
+                  {{role}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field class="projectskills">
+              <mat-chip-list #chipList aria-label="Fruit selection">
+                <mat-chip *ngFor="let skill of newAttribute.skills" [selectable]="selectable" [removable]="removable"
+                  (removed)="remove(skill)">
+                  {{skill}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Skills" #skillInput [formControl]="skillCtrl" [matAutocomplete]="auto2"
+                  [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+              </mat-chip-list>
+              <mat-autocomplete #auto2="matAutocomplete" (optionSelected)="selected($event)">
+                <mat-option *ngFor="let skill of filteredSkills | async" [value]="skill">
+                  {{skill}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field class="projectnoofpeople">
+              <input matInput placeholder="No Of People" type="number" [(ngModel)]="newAttribute.noofpeople"
+                name="newAttributenoofpeople" />
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field class="projectexperience">
+              <input matInput placeholder="Experience" type="text" [(ngModel)]="newAttribute.experience"
+                name="newAttributeexperience" />
+            </mat-form-field>
+          </td>
+
+          <td>
+            <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- role ends -->
+
+
+
+  <!-- lacation starts -->
+  <div class="location">
+    <h6>Location :</h6>
+    <mat-form-field class="projectlocation">
+      <input matInput placeholder="Location" [(ngModel)]="location" name="location">
+    </mat-form-field>
+  </div>
+  <!-- location ends -->
+  ​
+  ​
+  <!-- cost starts -->
+  <div class="cost">
+    <h6>Cost :</h6>
+    <mat-form-field class="projectcost">
+      <input matInput placeholder="Cost" type="number" [(ngModel)]="cost" name="cost">
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field> <br>
+  </div>
+  <!-- cost ends -->
+  <div class="submit">
+    ​<button mat-raised-button color="Submit" (click)="save()">Submit</button>
+  </div>
+

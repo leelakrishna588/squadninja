@@ -1,0 +1,3 @@
+nodeId,name,parentnodeId,nodeType,nodeClass
+1,IT,0,domain,domain
+2,EventManagement,0,domain,domain

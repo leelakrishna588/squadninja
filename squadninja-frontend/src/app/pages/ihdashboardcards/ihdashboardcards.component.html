@@ -1,0 +1,113 @@
+<div class="header bg-gradient-dark opacity-1 pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row mt-9">
+    <div class="col-xl-11 mb-8 mb-xl-0">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <div class="row align-items-center">
+            <div class="col">
+              <!-- <mat-tab-group> -->
+                <!-- <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab"> -->
+                  <div class="cardGroup">
+                    <mat-card class="card" *ngFor="let card of cards;let index=index">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{card}}</mat-card-title>
+                        <mat-card-subtitle>Flying cars</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          Description of Idea
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <!-- <button type="button" color="btn btn-success" mat-button (click)="removeCard(index)">Accept</button> -->
+                        <button type="button" color="btn btn-success" mat-button
+                          (click)="removeCard(index)">View</button>
+                      </mat-card-actions>
+                    </mat-card>
+                    <!-- <mat-card>
+                                          <mat-card-header>card1</mat-card-header>
+                                        </mat-card> -->
+                  </div>
+                  <!-- <button mat-raised-button class="example-delete-tab-button" [disabled]="tabs.length === 1"
+                                        (click)="removeTab(index)">
+                                        Delete Tab
+                                      </button> -->
+                  <!-- <button mat-raised-button class="Close">Close</button> -->
+                <!-- </mat-tab> -->
+
+              <!-- </mat-tab-group> -->
+            <!-- </div> -->
+            <div class="col text-right">
+              <!-- <a href="#!" class="btn btn-sm btn-primary">Accept all</a> -->
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--7">
+  <div class="row mt-9">
+    <div class="col-xl-11 mb-8 mb-xl-0">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <div class="row align-items-center">
+
+          <mat-tab-group>
+            <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+              <div class="cardGroup">
+                <mat-card class="card" *ngFor="let card of cards;let index=index">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{card}}</mat-card-title>
+                    <mat-card-subtitle>Java Devloper</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p>
+                      Description of Idea
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button type="button" color="btn btn-success" mat-button (click)="removeCard(index)">Accept</button>
+                    <button type="button" color="btn btn-success" mat-button (click)="removeCard(index)">Reject</button>
+                  </mat-card-actions>
+                </mat-card>
+                <!-- <mat-card>
+                                          <mat-card-header>card1</mat-card-header>
+                                        </mat-card> -->
+              </div>
+              <!-- <button mat-raised-button class="example-delete-tab-button" [disabled]="tabs.length === 1"
+                                        (click)="removeTab(index)">
+                                        Delete Tab
+                                      </button> -->
+              <!-- <button mat-raised-button class="Close">Close</button> -->
+            </mat-tab>
+
+          </mat-tab-group>
+        </div>
+      </div>
+      <div class="table-responsive">
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
+
+  </div>
+</div>
+</div>

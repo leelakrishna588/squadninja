@@ -1,0 +1,252 @@
+.heading h1{
+  
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 35px;
+    // text-align: center;
+    margin-left: 30%;
+ }
+ 
+ .title {
+    margin-top: 5%;
+   margin-left: 10%;
+ 
+ }
+ .projecttitle{
+    width:86%;
+ }
+ .title h6{
+    font-size: 22px;
+ }
+ .description{
+    margin-top: 15px;;
+    margin-left: 10%;
+ }
+ .projectdescription{
+    width: 86%;
+ }
+ .description h6{
+    font-size: 22px;
+ }
+ 
+ .duration{
+    margin-left: 10%;
+ }
+ .projectduration{
+    width:86%;
+ }
+ .duration h6{
+    font-size: 22px;
+ }
+ .domain{
+    margin-left: 10%;
+    margin-top: 40px;
+ }
+ .projectdomain{
+    width:86%;
+ }
+ .domain h6{
+    font-size: 22px;
+ }
+ .subdomains{
+    margin-left: 10%;
+ 
+ }
+ .projectsubdomains{
+    width:86%;
+ }
+ .subdomains h6{
+    font-size: 22px;
+ }
+ .role{
+    margin-left: 10%;
+    margin-top: 25px;
+    width:75%;
+ }
+ 
+ .rolebody .projectrole {
+    width:80%;
+ }
+ .rolebody .projectskills{
+    width:80%;
+ }
+ .rolebody .projectnoofpeople{
+    width: 80%;
+ }
+ .rolebody .projectexperience{
+    width:80%;
+ }
+ .rolebody input {
+    width:80%;
+ }
+ .threadclass tr {
+    font-size: 18px;
+    
+ }
+ 
+ .location{
+    margin-top: 25px;
+    margin-left: 10%;
+ }
+ .projectlocation{
+    width: 86%;
+ }
+ .location h6{
+    font-size: 22px;
+ }
+ .cost{
+    margin-top: 3px;
+    margin-left: 10%; 
+ }
+ .projectcost{
+    width: 86%;
+ }
+ 
+ .cost h6{
+    font-size: 22px;
+ }
+ .submit{
+    margin-left: 40%;
+   
+ }
+ 
+  .mat-raised-button{
+     width:70%;
+     font-size: 20px;
+  }
+ 
+ 
+         
+  @media screen and (max-width: 600px){
+    .heading h1{
+   
+       margin-top: 20px;
+       text-transform: uppercase;
+       font-size: 40px;
+       text-align: center;
+       margin-left:30%;
+ }
+    
+ .title {
+    margin-top: 20%;
+   margin-left: 20%;
+ }
+ .projecttitle{
+    width:300%;
+    font-size: 30px;
+ }
+ .title h6{
+    font-size: 40px;
+ }
+ 
+ 
+ .description{
+    margin-top: 15px;;
+    margin-left: 20%;
+ }
+ .projectdescription{
+    width: 300%;
+    font-size: 30px;
+ }
+ .description h6{
+    font-size: 40px;
+ }
+ 
+ .duration{
+    margin-left: 20%;
+ }
+ .projectduration{
+    width:300%;
+    font-size: 30px;
+ }
+ .duration h6{
+    font-size: 40px;
+ }
+ .domain{
+    margin-left: 20%;
+    margin-top: 70px;
+ }
+ .projectdomain{
+    width:300%;
+    font-size: 30px;
+ }
+ .domain h6{
+    font-size: 40px;
+ }
+ 
+ .subdomains{
+    margin-left: 20%;
+ 
+ }
+ .projectsubdomains{
+    width:300%;
+    font-size: 30px;
+ }
+ .subdomains h6{
+    font-size: 40px;
+ }
+ 
+ .role{
+    margin-left: 20%;
+    margin-top: 25px;
+    /* width: 100% */
+ }
+ 
+ .rolebody .projectrole {
+    width:80%;
+    font-size: 25px;
+ }
+ .rolebody .projectskills{
+    width:80%;
+    font-size: 25px;
+ }
+ .rolebody .projectnoofpeople{
+    width: 80%;
+    font-size: 25px;
+ }
+ .rolebody .projectexperience{
+    width:80%;
+    font-size: 25px;
+ }
+ .rolebody input {
+    width:80%;
+ }
+ .threadclass tr {
+    font-size: 29px;
+    
+ }
+ 
+ .location{
+    margin-top: 25px;
+    margin-left: 20%;
+ }
+ .projectlocation{
+    width: 300%;
+    font-size: 30px;
+ }
+ .location h6{
+    font-size: 40px;
+ }
+ .cost{
+    margin-top: 3px;
+    margin-left: 20%; 
+ }
+ .projectcost{
+    width: 300%;
+    font-size: 30px;
+ }
+ 
+ .cost h6{
+    font-size: 40px;
+ }
+ .submit{
+    margin-left: 40%;
+   
+ }
+ 
+  .mat-raised-button{
+     width:100%;
+     font-size: 30px;
+  }
+      
+  }

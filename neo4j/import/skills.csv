@@ -1,0 +1,61 @@
+nodeid,name,nodetype,parent_id
+601,mysql,skill,501
+602,css,skill,502
+603,c++,skill,501
+604,php,skill,503
+605,html,skill,505
+606,javascript,skill,504
+607,asp.net,skill,506
+608,jsp,skill,507
+609,android,skill,508
+610,ios,skill,509
+611,c#,skill,510
+612,laveral,skill,511
+613,react.js,skill,512
+614,node.js,skill,513
+615,network admin,skill,514
+616,springboot,skill,515
+617,springmvc,skill,516
+618,json,skill,517
+619,kafka,skill,518
+620,neo4j,skill,519
+621,rabbitmq,skill,520
+622,core java,skill,521
+623,web hosting,skill,522
+624,aws,skill,523
+625,cloud,skill,524
+626,python,skill,525
+627,ruby,skill,514
+628,scala,skill,516
+629,linux,skill,525
+630,unix,skill,520
+631,cisco,skill,517
+632,routing,skill,518
+633,azure,skill,513
+634,neural network,skill,518
+635,artificial intelligence,skill,509
+636,nlp,skill,502
+637,pycharm,skill,503
+638,analytics,skill,506
+639,eventmgmt,skill,511
+640,blockchain,skill,512
+641,Svelte,skill,515
+642,Apple MDM,skill,520
+643,Jest,skill,525
+644,Kotlin,skill,519
+645,Dart,skill,518
+646,Microsoft Powerapps,skill,514
+647,MicrosoftFlow,skill,507
+648,Oracle Cloud Platform,skill,506
+649,Apache Knox Gateway,skill,521
+650,Apache Nifi,skill,523
+651, Great Interpersonal Skills,skill,510
+652,Flexibility,skill,512
+653, Energetic,skill,513
+654,Creative and Innovative,skill,511
+655, Keen Eye for Details,skill,517
+656,Good Time Management Skills,skill,516
+657,Passionate and Enthusiastic,skill,520
+658, Leadership Skills,skill,521
+659,Superior Organizational Skills,skill,523
+660, Tech Savvy,skill,501
